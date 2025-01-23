@@ -7,6 +7,10 @@ function GuessingGame(randNum) {
     var attempts = 0;
     while (isGuessCorrect == false) {
         var userGuess = parseInt(readline.question(console.log("Enter your guess: ")));
+        while (Number.isNaN(userGuess) == true) {
+            console.log("Not a number. Please enter a number and try again.");
+            userGuess = parseInt(readline.question("Enter your guess: "));
+        }
         attempts++;
         if (userGuess == randNum) {
             isGuessCorrect = true;
