@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GuessingGame = GuessingGame;
 var readline = require("readline-sync");
-function GuessingGame(randNum) {
+function GuessingGame(highScore, randNum) {
     var isGuessCorrect = false;
     var attempts = 0;
     while (isGuessCorrect == false) {
@@ -15,6 +15,11 @@ function GuessingGame(randNum) {
         if (userGuess == randNum) {
             isGuessCorrect = true;
             console.log("Correct! You guessed the correct number in " + attempts + " attempts!");
+            if (highScore == undefined || attempts < highScore) {
+                highScore = attempts;
+                console.log("Congratulations! You now have a new High Score of " + highScore);
+            }
+            return highScore;
         }
         else {
             if (randNum < userGuess) {

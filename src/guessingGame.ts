@@ -2,7 +2,7 @@ import * as readline from "readline-sync";
 
 
 
-export function GuessingGame(randNum: number): void
+export function GuessingGame(highScore: number | undefined, randNum: number): number | undefined
 {
     let isGuessCorrect: boolean = false;
     let attempts: number = 0;
@@ -18,11 +18,17 @@ export function GuessingGame(randNum: number): void
         }
 
         attempts++;
-        
+
         if (userGuess == randNum)
         {
             isGuessCorrect = true;
             console.log("Correct! You guessed the correct number in " + attempts + " attempts!");
+            if (highScore == undefined || attempts < highScore)
+            {
+                highScore = attempts;
+                console.log("Congratulations! You now have a new High Score of " + highScore);
+            }
+            return highScore;
         }
         else
         {
