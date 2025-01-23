@@ -1,7 +1,12 @@
 export class StandardMessages
 {
-  static IntroMessage(): void
+  static NoGameIntroMessage(): void
   {
     console.log("Random Number Generator");
+  }
+
+  static GameIntroMessage(): void
+  {
+    console.log("Random Number Guessing Game");
   }
 }

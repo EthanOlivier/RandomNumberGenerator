@@ -1,10 +1,22 @@
-import { RandomNumberBoundaries } from "./randomNumberBoundaries";
+import { WillUserGuess } from "./willUserGuess";
 import { StandardMessages } from "./standardMessages";
+import { GuessingGame } from "./guessingGame";
 import { OutputRandomNumber } from "./outputRandomNumber";
+import { GetRandomNumber } from "./getRandomNumber";
 
+if (WillUserGuess())
+{
+  StandardMessages.GameIntroMessage();
 
-StandardMessages.IntroMessage();
+  GuessingGame(
+    GetRandomNumber()
+  );
+}
+else
+{
+  StandardMessages.NoGameIntroMessage();
 
-OutputRandomNumber(
-  RandomNumberBoundaries()
-);
+  OutputRandomNumber(
+    GetRandomNumber()
+  );
+}
