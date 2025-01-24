@@ -1,8 +1,8 @@
 import * as readline from "readline-sync";
 
-import { CheckMinNum } from "./checkMinNum";
-import { CheckMaxNum } from "./checkMaxNum";
-import { RandomNumber } from "./randomNumber";
+import { CheckMinNum } from "./CheckMinNum";
+import { CheckMaxNum } from "./CheckMaxNum";
+import { RandomNumber } from "./RandomNumber";
 
 
 export function RandomNumberBoundaries(): RandomNumber

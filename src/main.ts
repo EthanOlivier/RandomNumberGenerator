@@ -1,13 +1,14 @@
-import * as readline from "readline-sync";
+import { WillUserGuess } from "./WillUserGuess";
+import { StandardMessages } from "./StandardMessages";
+import { GuessingGame } from "./GuessingGame";
+import { OutputRandomNumber } from "./OutputRandomNumber";
+import { GetRandomNumber } from "./GetRandomNumber";
+import { WillRepeat } from "./WillRepeat";
 
-import { WillUserGuess } from "./willUserGuess";
-import { StandardMessages } from "./standardMessages";
-import { GuessingGame } from "./guessingGame";
-import { OutputRandomNumber } from "./outputRandomNumber";
-import { GetRandomNumber } from "./getRandomNumber";
+
 
 let gameHighScore: number | undefined = undefined;
-while (true)
+do
 {
   if (WillUserGuess())
   {
@@ -25,10 +26,4 @@ while (true)
       GetRandomNumber()
     );
   }
-  console.log("Would you like to go again?");
-  const response: string = readline.question("Enter 1 for 'Yes' or 2 for 'No' ");
-  if (response != "1")
-  {
-    process.exit();
-  }
-}
+} while (WillRepeat())

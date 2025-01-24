@@ -1,7 +1,5 @@
 import * as readline from "readline-sync";
 
-
-
 export function GuessingGame(highScore: number | undefined, randNum: number): number | undefined
 {
     let isGuessCorrect: boolean = false;
@@ -10,6 +8,7 @@ export function GuessingGame(highScore: number | undefined, randNum: number): nu
     while (isGuessCorrect == false)
     {
         let userGuess: number = parseInt(readline.question(console.log("Enter your guess: ")));
+    
         while (Number.isNaN(userGuess) == true)
         {
             console.log("Not a number. Please enter a number and try again.");

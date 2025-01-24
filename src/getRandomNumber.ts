@@ -1,5 +1,5 @@
-import { RandomNumber } from "./randomNumber";
-import { RandomNumberBoundaries } from "./randomNumberBoundaries";
+import { RandomNumber } from "./RandomNumber";
+import { RandomNumberBoundaries } from "./RandomNumberBoundaries";
 
 export function GetRandomNumber(): number
 {
